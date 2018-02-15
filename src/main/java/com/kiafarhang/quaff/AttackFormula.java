@@ -1,3 +1,5 @@
+package com.kiafarhang.quaff;
+
 import java.util.*;
 
 public class AttackFormula {

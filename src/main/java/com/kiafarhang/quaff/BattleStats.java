@@ -1,3 +1,5 @@
+package com.kiafarhang.quaff;
+
 public class BattleStats {
     private int HP;
     private int ATK;

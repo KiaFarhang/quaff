@@ -1,3 +1,5 @@
+package com.kiafarhang.quaff;
+
 public class Warrior implements HasBattleStats {
     private Attributes attributes;
     private BattleStats maxStats;

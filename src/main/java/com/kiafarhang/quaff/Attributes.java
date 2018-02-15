@@ -1,3 +1,5 @@
+package com.kiafarhang.quaff;
+
 public class Attributes {
     private int strength;
     private int dexterity;
