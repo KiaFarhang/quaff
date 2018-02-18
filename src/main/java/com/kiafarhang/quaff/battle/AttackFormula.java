@@ -13,12 +13,12 @@ public class AttackFormula {
         int attackerATK = attackerStats.getATK();
         int targetDEF = targetStats.getDEF();
 
-        int critChance = attackerStats.getLUK() - 1;
+        // int critChance = attackerStats.getLUK() - 1;
 
-        if (critChance >= random.nextInt()) {
-            System.out.println("Critical hit!");
-            attackerATK *= 2;
-        }
+        // if (critChance >= random.nextInt()) {
+        //     System.out.println("Critical hit!");
+        //     attackerATK *= 2;
+        // }
 
         return attackerATK - targetDEF;
 
