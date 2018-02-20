@@ -47,26 +47,28 @@ public class Battle {
             turnOrder.add(combatant);
         }
 
-        // turnOrder.sort(new AgilityComparator());
-
         turnOrder.sort(
                 (HasBattleStats a, HasBattleStats b) -> b.getCurrentStats().getAGI() - a.getCurrentStats().getAGI());
 
         return turnOrder;
     }
 
-    // private class AgilityComparator implements Comparator<HasBattleStats> {
-    //     @Override
-    //     public int compare(HasBattleStats a, HasBattleStats b) {
-    //         int agilityA = a.getCurrentStats().getAGI();
-    //         int agilityB = b.getCurrentStats().getAGI();
-    //         if (agilityA > agilityB) {
-    //             return 1;
-    //         } else if (agilityA < agilityB) {
-    //             return -1;
-    //         } else {
-    //             return 0;
-    //         }
-    //     }
-    // }
+    /**
+     * Finds the item in a collection with the lowest DEF stat. If two objects have the same
+     * DEF stat, returns the first of the two to occur in the list.
+     * @param list The list of objects with battle stats to search.
+     * @return The object in the list with the lowest DEF stat.
+     */
+    static HasBattleStats findLowestDEF(Collection<HasBattleStats> list) {
+        Iterator<HasBattleStats> iterator = list.iterator();
+        HasBattleStats lowestDEF = iterator.next();
+        while (iterator.hasNext()) {
+            HasBattleStats nextObject = iterator.next();
+            if (nextObject.getCurrentStats().getDEF() < lowestDEF.getCurrentStats().getDEF()) {
+                lowestDEF = nextObject;
+            }
+        }
+
+        return lowestDEF;
+    }
 }

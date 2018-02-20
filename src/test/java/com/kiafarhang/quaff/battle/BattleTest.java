@@ -25,4 +25,15 @@ public class BattleTest {
 
         assertEquals(slime.getClass().toString(), sortedTurnOrder.get(0).getClass().toString());
     }
+
+    @Test
+    public void findLowestDEFTest() {
+        ArrayList<HasBattleStats> list = new ArrayList<HasBattleStats>(2);
+        list.add(warrior);
+        list.add(slime);
+
+        HasBattleStats lowestDEF = Battle.findLowestDEF(list);
+
+        assertEquals(slime, lowestDEF);
+    }
 }
