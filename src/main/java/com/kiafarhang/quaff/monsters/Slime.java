@@ -2,8 +2,9 @@ package com.kiafarhang.quaff.monsters;
 
 import com.kiafarhang.quaff.BattleStats;
 import com.kiafarhang.quaff.HasBattleStats;
+import com.kiafarhang.quaff.HasName;
 
-public class Slime implements HasBattleStats {
+public class Slime implements HasBattleStats, HasName {
     private BattleStats maxStats;
     private BattleStats currentStats;
 

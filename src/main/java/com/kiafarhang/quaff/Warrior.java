@@ -1,6 +1,8 @@
 package com.kiafarhang.quaff;
 
-public class Warrior implements HasBattleStats {
+import com.kiafarhang.quaff.HasName;
+
+public class Warrior implements HasBattleStats, HasName {
     private Attributes attributes;
     private BattleStats maxStats;
     private BattleStats currentStats;
