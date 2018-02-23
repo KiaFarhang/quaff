@@ -18,4 +18,8 @@ public class Warrior implements HasBattleStats {
     public BattleStats getCurrentStats() {
         return this.currentStats;
     }
+
+    public String getName() {
+        return "Warrior";
+    }
 }

@@ -19,4 +19,8 @@ public class Slime implements HasBattleStats {
     public BattleStats getCurrentStats() {
         return this.currentStats;
     }
+
+    public String getName() {
+        return "Slime";
+    }
 }
