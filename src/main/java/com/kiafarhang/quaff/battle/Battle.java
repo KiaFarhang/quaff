@@ -6,23 +6,34 @@ import com.kiafarhang.quaff.*;
 public class Battle {
     private Collection<HasBattleStats> sideA;
     private Collection<HasBattleStats> sideB;
-    private List<HasBattleStats> turnOrder;
     private boolean isOver;
 
     public Battle(Collection<HasBattleStats> sideA, Collection<HasBattleStats> sideB) {
         this.isOver = false;
         this.sideA = sideA;
         this.sideB = sideB;
-        this.turnOrder = generateTurnOrder(this.sideA, this.sideB);
 
     }
 
     private void round() {
+        List<HasBattleStats> turnOrder = generateTurnOrder(sideA, sideB);
+
         // Iterate through the turnOrder
-        for (Iterator<HasBattleStats> it = this.turnOrder.iterator(); it.hasNext();) {
-            HasBattleStats combatant = it.next();
-            Collection<HasBattleStats> enemies = this.sideA.contains(combatant) ? this.sideB : this.sideA;
-            Random random = new Random();
+        for (Iterator<HasBattleStats> it = turnOrder.iterator(); it.hasNext();) {
+            HasBattleStats currentCombatant = it.next();
+            if (currentCombatant.getCurrentStats().getHP() > 0) {
+                boolean isPlayerSide = this.sideA.contains(currentCombatant);
+                if (isPlayerSide) {
+                    // Ask who to attack
+                } else {
+                    HasBattleStats target = findLowestDEF(this.sideA);
+                    int damage = AttackFormula.calculateDamage(currentCombatant, target);
+                    StringBuilder stringBuilder = new StringBuilder();
+                    stringBuilder.append(currentCombatant.toString());
+                }
+            }
+            // Collection<HasBattleStats> enemies = this.sideA.contains(combatant) ? this.sideB : this.sideA;
+            // Random random = new Random();
 
         }
 
